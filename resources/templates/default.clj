@@ -1,22 +1,15 @@
-; The define-template macro takes care of all the boilerpalte
-(static.core/define-template base-template-file 
-     ; set the head properties
-     [:head] (enlive/content (static.core/template-head-model metadata))
+;; POST TEMPLATE
 
-     ; Now the main Content
-     [:#maincontent]   (enlive/content (map #(static.core/template-article-model % ) content)) 
+(static.core/define-template base-template-file
 
-     
-     ; if we have a site entry, remove the date and the headline
-     [:#maincontent :> :article :> [:h6 (enlive/nth-of-type 1)]] #(when (not (= (:type metadata) :site)) %)
+  [:html] general-template
 
-     ; and append the pager, if possible
-     [:#maincontent] (enlive/append (if (:pager metadata) (static.core/template-pager-model (:pager metadata)) ""))
+  [:.bg.dark-color :header] page-title
 
-     ; The categories
-     [:#categories] (enlive/content (map #(static.core/template-category-model %) (:categories metadata)))
+  [:.content.standard-layout :.main-area] 
+    (enlive/html-content (-> content first :content))
 
-     ; And the projects
-     [:#projects] (enlive/append (map #(static.core/template-project-model %) (:projects metadata)))
-     [:#projects :> :li.project-template] (fn [a] nil) ;we remove the template
+  [:.content.standard-layout :.sidebar]
+    (enlive/content (template-recent-post))
+
 )

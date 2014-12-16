@@ -8,12 +8,11 @@
  :in-dir "resources/"
  :out-dir "html/"
  :post-dir "news/"
- :default-template "mdefault.clj"
- :index-template "mdefault.clj"
- :list-template "mlist.clj"
- :base-template "mbase.clj"
+ :default-template "default.clj"
+ :list-template "list.clj"
+ :base-template "base.clj"
  :encoding "UTF-8"
- :blog-as-index true
+ :blog-as-index false
  :posts-per-page 5
  :create-archives true
  :archives-title "Recent News"
@@ -23,3 +22,4 @@
  :date-format-archive "MMMM yyyy" ; the output dateformat for archive links
  :atomic-build true
 ]
+	

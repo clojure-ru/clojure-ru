@@ -11,85 +11,96 @@
 ; content is a vector of dictionaries:
 ; :id
 ; :title
-; :content
+; :ent
 ; :url
 ; :content
 ; :keywords / tags
 ; :footnotes
 
-(def base-template-file (static.core/template-path "_index.html"))
+(def index-template-file (template-path "_index.html"))
+(def base-template-file (template-path "_post.html"))
+(def site-template-file (template-path "_list.html"))
 
-(enlive/defsnippet template-tags-link-model base-template-file [:.tagoverview :ul :> enlive/first-child]
-  [post]
-  [:span] (enlive/content (:date post))
-  [:a] (enlive/do-> (enlive/set-attr :href (:url post)) (enlive/content (:title post))))
+(def number-of-news-on-home "This number most 3*k-1" 5)
+(def number-of-other-news-on-home "Less than 5" 3)
 
-(enlive/defsnippet template-tags-model  base-template-file
-  [:.tagoverview]
-  [[headline content]]
-  [[:h2 (enlive/nth-of-type 1)]] (enlive/content headline)
-  [:ul] (enlive/content (map #(template-tags-link-model %) content)))
+;; HELPERS
 
-(enlive/defsnippet template-pager-model  base-template-file
-  [:#pager]
-  [{:keys [newer older]}]
-  [:#previous-page] (enlive/set-attr :href newer)
-  [:#next-page] (enlive/set-attr :href older)
-  ; remove the previous or next pager when we don't need them
-  [:#previous-page] #(when newer %)
-  [:#next-page] #(when older %))
+(defn make-link [title url]
+  (enlive/do->
+    (enlive/set-attr :href url)
+    (enlive/content title)))
 
-(enlive/defsnippet template-footnotes-model  base-template-file
-  [:#thearticle :> :.footnotes :> enlive/first-child :> enlive/first-child]
-  [{:keys [text ref id]}]
-  [:li] (enlive/do->
-         (enlive/set-attr :id ref))
-  [:li :> enlive/first-child :> enlive/text-node] (enlive/substitute text)
-  [:li :> enlive/first-child :> :a] (enlive/set-attr :href id))
+(defn links-list [posts]
+  (enlive/clone-for [{:keys [title url]} posts]
+    [:a] (make-link title url)))
 
-(enlive/defsnippet template-article-model base-template-file [:#thearticle]
-  [{:keys [id title date content url footnotes] :as thearticle}]
-  [:.actual-content] (enlive/html-content content)
-  [:h6 :> enlive/text-node] (enlive/substitute (str " " date " "))
-  [:h6 :a] (enlive/set-attr :href url)
-  [:h3 :a] (enlive/content title)
-  [:h3 :a] (enlive/set-attr :href url)
-  [:#thearticle] (enlive/set-attr :id (str "article-" id))
-  [:.footnotes :> enlive/first-child] (enlive/content (map template-footnotes-model footnotes)) 
-  )
+(defn page-title [header]
+   (enlive/at header [:h1] (enlive/content (:title metadata))))
 
-(enlive/defsnippet template-category-model  base-template-file
-  [:#categories :> enlive/first-child]
-  [{:keys [tag url count]}]
-  [:a] (enlive/do->
-        (enlive/set-attr :href url)
-        (enlive/content (str tag " (" count ")"))))
+;; STATIC INCLUDES
 
+(enlive/defsnippet navigation-template (template-path "_navigation.html")
+  [:li] [] identity)
 
-(enlive/defsnippet template-project-model  base-template-file
-  [:#projects :> :li.project-template]
-  [{:keys [project link]}]
-  [:li] (enlive/remove-attr :class) ;remove the class as we filter the template based on it
-  [:a] (enlive/do->
-        (enlive/set-attr :href link)
-        (enlive/content project)))
+(enlive/defsnippet footer-template (template-path "_footer.html")
+  [enlive/root] [] identity)
 
-(enlive/defsnippet template-head-model base-template-file
-  [:head]
-  [metadata]
-  [[:meta (enlive/attr= :content "template")]]
-  (enlive/clone-for [{:keys [name value]} [{:name "description" :value (:description metadata)}
-                                           {:name "keywords" :value (:tags metadata)}
-                                           {:name "author" :value (:author metadata)}]]
-                    (enlive/do->
-                     (enlive/set-attr :name name)
-                     (enlive/set-attr :content value)))
+(defn general-template [html]
+  (enlive/at html
+    [:#header :ul] (enlive/content (navigation-template))
+    [:footer] (enlive/content (footer-template))
+    [:head :title] (enlive/content (:title metadata))))
 
-     ; Next, the RSS Link
-     [[:link (enlive/attr= :rel "alternate" :title "rsstemplate")]]
-     (enlive/set-attr :title (:site-title (static.config/config)))
+;; NEWS BLOCK FOR HOME
 
-     ; The title
-     [:head :title] (enlive/content (if-let [t (:title metadata)] t (:site-title metadata)))
-  )
+(enlive/defsnippet template-news-block-model index-template-file
+ [:.post.cell]
+ [{:keys [date title url description]}]
+ [:h3 :a] (make-link title url)
+ [:p.post-info] (enlive/content date)
+ [:p :a] (enlive/set-attr :href url)
+ [:div :div] (enlive/html-content description))
 
+(enlive/defsnippet template-other-news index-template-file
+ [:#news :> enlive/last-child :li]
+ [{:keys [title url]}]
+ [:a] (make-link title url))
+
+(enlive/defsnippet template-other-news-block-model index-template-file
+ [:#news  :> enlive/last-child]
+ [content]
+ [:.post :ul :li] (links-list (take number-of-other-news-on-home content)))
+
+;; RECENT POSTS block
+
+(enlive/defsnippet template-recent-post base-template-file
+  [:.content.standard-layout :.sidebar :.navigation]
+  []
+  [:h4 :strong] (enlive/content "Последние новости")
+  [:ul.menu :li] (links-list (recent-posts-sidebar)))
+
+;; ARCHIVES
+
+(defn make-archive-links-for-year [year date]
+    {:title (str (format-date "MMMM" date) " " year)
+     :url (str "/" year "/" (format-date  "MM" date))})
+
+(defn make-archive-links-for-archive [[year _]]
+    {:title (str year " Архивы") :url (str "/" year "/")})
+
+(defn archive-sidebar-title []
+  (if (= (:type metadata) :year-news)
+      "Архив за месяц"
+      "Архив за год"))
+
+(enlive/defsnippet template-archive-post site-template-file
+  [:.content.standard-layout :.sidebar :.navigation]
+  []
+  [:h4 :strong] (enlive/content (archive-sidebar-title))
+  [:ul.menu :li]
+  (if (= (:type metadata) :year-news)
+    (let [[year posts] (first content)]
+      (links-list (map #(make-archive-links-for-year year %) 
+                       (distinct (map :javadate posts)))))
+    (links-list (map make-archive-links-for-archive content)))) 

@@ -1,13 +1,25 @@
-(static.core/define-template base-template-file
-  
-     [:head] (enlive/content (static.core/template-head-model metadata))
+;; ARCHIVES TEMPLATE
 
-     [:#maincontent]   (enlive/content (map #(static.core/template-tags-model %) content)) 
+(static.core/define-template site-template-file
 
-     ; The categories
-     [:#categories] (enlive/content (map #(static.core/template-category-model %) (:categories metadata)))
+  [:html] general-template
 
-     ; And the projects
-     [:#projects] (enlive/content (map #(template-project-model %) (:projects metadata)))
+;; CONTENT BLOCK's
+
+  [:.bg.dark-color :header :h1] (enlive/content 
+                              (case (:type metadata)
+                                :year-news (str (:title metadata) " Архивы")
+                                :month-news (:title metadata)
+                                (:title metadata)))
+
+  [:.content.standard-layout :.main-area :.post] 
+    (enlive/clone-for [{:keys [title url description date]} (mapcat second content)]
+      [:h3 :a] (make-link title url)
+      [:p.post-info] (enlive/content date)
+      [:p :a] (enlive/set-attr :href url)
+      [:div :div] (enlive/html-content description))
+
+  [:.content.standard-layout :.sidebar]
+    (when-not (= (:type metadata) :month-news)
+      (enlive/content (template-archive-post)))
 )
-
