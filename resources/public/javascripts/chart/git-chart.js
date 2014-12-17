@@ -1,14 +1,14 @@
 var canvasID = "libraries-stat",
 	gitChart = null,
 	lineColors = ["#C8001A", "#2F3871", "#FF5022", "#FFAF00", "#5083F1", "#002157", "#0076A3", "#BD8CBF", "#603913", "#C69C6D"],
-	columnNames = ['&nbsp;&nbsp;', 'Имя репозитория', 'Индекс', 'Коммитов за неделю'];
+	columnNames = ['&nbsp;&nbsp;', 'Имя репозитория', 'Активность', 'Коммитов за неделю'];
 
-function makeChart(repositories){
+function makeChart(response){
 	'use strict'
 
 	var data = [],
 		maxIncrement = 0;
-	repositories.forEach(function(el, idx){
+	response.data.forEach(function(el, idx){
 		var line = {
 			label: el['name'],
 			data: el['incrs'],
@@ -61,8 +61,8 @@ function makeChart(repositories){
 
 				color.style = "background-color:" + val.strokeColor;
 				name.innerHTML = '<a href="' + val.url + '">' + val.label + '</a>';
-				weight.innerHTML = Math.round(repositories[idx].w);
-				increment.innerHTML = Math.round(repositories[idx].sum);
+				weight.innerHTML = Math.round(response.data[idx].w);
+				increment.innerHTML = Math.round(response.data[idx].sum);
 
 				color.classList.add('lineColor');
 				weight.classList.add('number');
@@ -90,7 +90,7 @@ function makeChart(repositories){
 		gitChart = new Chart(document.getElementById(canvasID).getContext("2d")).Line(
 			// data
 			{
-				labels: ["29.11.14", "30.11.14", "1.12.14", "2.12.14", "3.12.14", "4.12.14", "5.12.14"],
+				labels: response.dates,
 				datasets: data,
 			}, {
 				animation: false,
