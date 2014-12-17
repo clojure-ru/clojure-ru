@@ -1,15 +1,20 @@
 var Examples = {
-  names: ['cities', 'greeter', 'i_love_ruby', 'hello_world'],
+  names: ['hello_world', 'math'],
 
   random: function() {
     return Examples.names[Math.floor(Math.random() * Examples.names.length)];
   },
 
   choose: function() {
-    var lang = document.location.pathname.split('/')[1];
     var name = Examples.random();
 
-    $("#code").load('/' + lang + '/examples/' + name + '/');
+    $("#code").load('/examples/' + name + '/', function(){
+
+	    $('#code pre code').each(function(i, block) {
+		  hljs.highlightBlock(block);
+		});
+	 
+	});
   }
 };
 

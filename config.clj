@@ -4,7 +4,7 @@
  :site-description "Documenting Clojure research"
  :site-url "http://razum2um.me"
  :site-default-keywords "clojure javascript clojurescript html ios mac research"
- :site-author "Benedikt Terhechte"
+ :site-author "Vladimir Bokov (Vlad) and Evgenij Solovjev"
  :in-dir "resources/"
  :out-dir "html/"
  :post-dir "news/"
@@ -22,4 +22,3 @@
  :date-format-archive "MMMM yyyy" ; the output dateformat for archive links
  :atomic-build true
 ]
-	

@@ -1,4 +1,3 @@
-
 (static.core/define-template index-template-file
 
   [:html] general-template
@@ -11,4 +10,8 @@
             (enlive/append (when (> (count content) number-of-news-on-home)
                                   (static.core/template-other-news-block-model 
                                     (drop number-of-news-on-home content)))))
+
+  ;[:.hero-example :.highlight] (enlive/html-content (:content (first content)))
+
+  ;[:.debug] (fn [_] (:content (first content)))
 )

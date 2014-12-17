@@ -72,6 +72,13 @@
  [content]
  [:.post :ul :li] (links-list (take number-of-other-news-on-home content)))
 
+;; HELLO WORLD for HOME
+
+;(enlive/defsnippet hello-world-template (template-path "_examples.html")
+;  [enlive/root] 
+;  [] 
+;  [:code] identity)
+
 ;; RECENT POSTS block
 
 (enlive/defsnippet template-recent-post base-template-file
@@ -83,11 +90,11 @@
 ;; ARCHIVES
 
 (defn make-archive-links-for-year [year date]
-    {:title (str (format-date "MMMM" date) " " year)
-     :url (str "/" year "/" (format-date  "MM" date))})
+  {:title (str (format-date "MMMM" date) " " year)
+   :url (str "/" year "/" (format-date  "MM" date))})
 
 (defn make-archive-links-for-archive [[year _]]
-    {:title (str year " Архивы") :url (str "/" year "/")})
+  {:title (str year " Архивы") :url (str "/" year "/")})
 
 (defn archive-sidebar-title []
   (if (= (:type metadata) :year-news)
