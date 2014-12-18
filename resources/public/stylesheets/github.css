@@ -32,8 +32,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .hljs-number,
-.hljs-hexcolor,
-.ruby .hljs-constant {
+.hljs-hexcolor, {
   color: rgb(240, 218, 53);
 }
 
@@ -84,7 +83,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
 .lisp .hljs-keyword,
 .clojure .hljs-keyword,
 .scheme .hljs-keyword,

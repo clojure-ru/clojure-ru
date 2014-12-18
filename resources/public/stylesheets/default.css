@@ -28,8 +28,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 .hljs-preprocessor,
 .hljs-pragma,
 .haml .hljs-symbol,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
 .hljs-template_tag,
 .django .hljs-variable,
 .smalltalk .hljs-class,
@@ -78,7 +76,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 .hljs-label,
 .hljs-javadoc,
-.ruby .hljs-string,
 .hljs-decorator,
 .hljs-filter .hljs-argument,
 .hljs-localvars,
