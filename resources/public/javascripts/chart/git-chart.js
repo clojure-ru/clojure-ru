@@ -59,7 +59,7 @@ function makeChart(response){
 					weight = document.createElement('td'),
 					increment = document.createElement('td');
 
-				color.style = "background-color:" + val.strokeColor;
+				color.style.cssText = "background-color:" + val.strokeColor;
 				name.innerHTML = '<a href="' + val.url + '">' + val.label + '</a>';
 				weight.innerHTML = Math.round(response.data[idx].w);
 				increment.innerHTML = Math.round(response.data[idx].sum);
@@ -120,3 +120,4 @@ xmlhttp.onreadystatechange = function() {
 
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
+
