@@ -774,8 +774,8 @@ body {
 
 /* line 32, ../_sass/screen.scss */
 .important-button, .hero-description .primary-button, .navbar a.active, .navbar a.active:visited {
-  border-top: 1px solid #e74646;
-  background-color: #c61a1a;
+  border-top: 1px solid #49B4E7;
+  background-color: #4C83D0;
   color: #eeeeee;
   -webkit-transition: border-top-color 90ms linear, background-color 90ms linear;
   -moz-transition: border-top-color 90ms linear, background-color 90ms linear;
@@ -784,8 +784,8 @@ body {
 }
 /* line 38, ../_sass/screen.scss */
 .important-button:hover, .hero-description .primary-button:hover, .navbar a.active:hover {
-  background-color: #dd1d1d;
-  border-top-color: #ea5c5c;
+  background-color: #84B3F5;
+  border-top-color: #7DD5FF;
 }
 
 /* line 44, ../_sass/screen.scss */
@@ -1196,7 +1196,7 @@ nav .mobile-nav-button img {
 /* line 298, ../_sass/screen.scss */
 .hero-description h1 strong {
   font-weight: 600;
-  color: #c61a1a;
+  color: #4961E7;
 }
 /* line 308, ../_sass/screen.scss */
 .hero-description .secondary-button {
