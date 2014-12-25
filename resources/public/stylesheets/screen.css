@@ -750,7 +750,7 @@ table {
 /* Text.Whitespace */
 /* line 8, ../_sass/screen.scss */
 body {
-  background-color: #D6F2CF;
+  background-color: #b1d4f2;
   font-family: 'Source Sans Pro', Helvetica, Verdana, Geneva, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -758,9 +758,9 @@ body {
 
 /* line 20, ../_sass/screen.scss */
 .button, .important-button, .hero-description .primary-button, .hero-description .secondary-button, .navbar a, .navbar a:visited {
-  border-top: 1px solid #343434;
-  background-color: #252525;
-  color: #eeeeee;
+  /* border-top: 1px solid #49B4E7; */
+  background-color: #b3cbf2;
+  color: #0b3b8e;
   -webkit-transition: border-top-color 90ms linear, background-color 90ms linear;
   -moz-transition: border-top-color 90ms linear, background-color 90ms linear;
   -o-transition: border-top-color 90ms linear, background-color 90ms linear;
@@ -768,15 +768,16 @@ body {
 }
 /* line 26, ../_sass/screen.scss */
 .button:hover, .important-button:hover, .hero-description .primary-button:hover, .hero-description .secondary-button:hover, .navbar a:hover {
-  background-color: #2a2a2a;
+  color: #b3cbf2;
+  background-color: #0b3b8e;
   border-top-color: #393939;
 }
 
 /* line 32, ../_sass/screen.scss */
 .important-button, .hero-description .primary-button, .navbar a.active, .navbar a.active:visited {
-  border-top: 1px solid #49B4E7;
-  background-color: #4C83D0;
-  color: #eeeeee;
+  /* border-top: 1px solid #49B4E7; */
+  background-color: #1c5ac3;
+  color: #b3cbf2;
   -webkit-transition: border-top-color 90ms linear, background-color 90ms linear;
   -moz-transition: border-top-color 90ms linear, background-color 90ms linear;
   -o-transition: border-top-color 90ms linear, background-color 90ms linear;
@@ -784,7 +785,7 @@ body {
 }
 /* line 38, ../_sass/screen.scss */
 .important-button:hover, .hero-description .primary-button:hover, .navbar a.active:hover {
-  background-color: #84B3F5;
+  background-color: #0b3b8e;
   border-top-color: #7DD5FF;
 }
 
@@ -822,6 +823,7 @@ h1 {
   font-weight: 600;
   line-height: 1.4;
   margin-top: 0;
+  color: rgba(255,255,255,0.8);
 }
 
 /* line 81, ../_sass/screen.scss */
@@ -1196,7 +1198,7 @@ nav .mobile-nav-button img {
 /* line 298, ../_sass/screen.scss */
 .hero-description h1 strong {
   font-weight: 600;
-  color: #4961E7;
+  color: rgba(0, 0, 0, 0.5);
 }
 /* line 308, ../_sass/screen.scss */
 .hero-description .secondary-button {
@@ -1248,11 +1250,11 @@ nav .mobile-nav-button img {
 }
 /* line 348, ../_sass/screen.scss */
 .bg.alt-color {
-  background-color: #B5DBAB;
+  background-color: #70a3e0;
 }
 /* line 352, ../_sass/screen.scss */
 .bg.dark-color {
-  background-color: #5A9A29;
+  background-color: #4383d0;
 }
 /* line 355, ../_sass/screen.scss */
 /* .bg.image-bg { */
@@ -1555,13 +1557,16 @@ nav .mobile-nav-button img {
 }
 /* line 446, ../_sass/screen.scss */
 .content a, .content-dark a, footer a {
-  color: #c61a1a;
-  border-bottom: 2px solid rgba(198, 26, 26, 0.3);
-  text-decoration: none;
+  padding: 2px 3px;
+  color: #084F88;
+  /* border-bottom: 2px solid rgba(198, 26, 26, 0.3); */
+  border-bottom-color: #09458c;
+  text-decoration: underline;
 }
 /* line 451, ../_sass/screen.scss */
 .content a:hover, .content-dark a:hover, footer a:hover {
-  border-bottom-color: #c61a1a;
+  color: #b2cff2;
+  background: #1a66c1;
 }
 /* line 456, ../_sass/screen.scss */
 .content h1, .content-dark h1, footer h1, .content h2, .content-dark h2, footer h2, .content h3, .content-dark h3, footer h3 {
