@@ -750,7 +750,7 @@ table {
 /* Text.Whitespace */
 /* line 8, ../_sass/screen.scss */
 body {
-  background-color: #bec9d6;
+  background-color: #D6F2CF;
   font-family: 'Source Sans Pro', Helvetica, Verdana, Geneva, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -1248,19 +1248,19 @@ nav .mobile-nav-button img {
 }
 /* line 348, ../_sass/screen.scss */
 .bg.alt-color {
-  background-color: #a8b7c8;
+  background-color: #B5DBAB;
 }
 /* line 352, ../_sass/screen.scss */
 .bg.dark-color {
-  background-color: #23354f;
+  background-color: #5A9A29;
 }
 /* line 355, ../_sass/screen.scss */
-.bg.image-bg {
-  background-image: url(/images/bg.jpg);
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+/* .bg.image-bg { */
+/*   background-image: url(/images/bg.jpg); */
+/*   background-position: top center; */
+/*   background-size: cover; */
+/*   background-repeat: no-repeat; */
+/* } */
 @media (max-width: 42em) {
   /* line 355, ../_sass/screen.scss */
   .bg.image-bg {
