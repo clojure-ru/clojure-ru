@@ -1195,6 +1195,25 @@ nav .mobile-nav-button img {
   margin-top: 0;
   margin-bottom: 2em;
 }
+.hero-description h1:before {
+  content: "(";
+  font-size: 4em;
+  float: left;
+  margin-top: -0.25em;
+}
+.hero-description h1:after {
+  content: ")";
+  font-size: 4em;
+  float: right;
+  margin-top: -1em;
+}
+
+@media (max-width: 62em) {
+  .hero-description h1:after {
+    margin-top: -1.3em;
+    margin-right: -0.2em;
+  }
+}
 /* line 298, ../_sass/screen.scss */
 .hero-description h1 strong {
   font-weight: 600;
