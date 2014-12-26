@@ -148,7 +148,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Inconsolata';
+  font-family: 'Noto Sans', monospace;
   font-size: 1em;
 }
 
@@ -1184,9 +1184,9 @@ nav .mobile-nav-button img {
 
 /* line 290, ../_sass/screen.scss */
 .hero-description {
-  width: 65.65657%;
+  width: 60%;
   float: left;
-  margin-right: 3.0303%;
+  margin-right: 3%;
   display: inline;
   color: #eeeeee;
 }
@@ -1207,7 +1207,7 @@ nav .mobile-nav-button img {
 
 /* line 314, ../_sass/screen.scss */
 .hero-example {
-  width: 31.31313%;
+  width: 36%;
   float: right;
   margin-right: 0;
   *margin-left: -1.8em;
@@ -1218,10 +1218,14 @@ nav .mobile-nav-button img {
 .hero-example pre {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 1em;
-  font-size: 0.8em;
+  padding: 0.2em;
+  font-size: 0.9em;
   margin-top: 0;
   margin-bottom: 0;
+}
+.hero-example pre code {
+  background: none;
+  padding 0;
 }
 
 @media (max-width: 42em) {

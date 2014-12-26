@@ -1,5 +1,5 @@
 var Examples = {
-  names: ['hello_world', 'math'],
+  names: ['hello', 'repl', 'threading', 'bytecode', 'macros', 'macros2'],
 
   random: function() {
     return Examples.names[Math.floor(Math.random() * Examples.names.length)];
@@ -10,11 +10,10 @@ var Examples = {
 
     $("#code").load('/examples/' + name + '/', function(){
 
-	    $('#code pre code').each(function(i, block) {
-		  hljs.highlightBlock(block);
-		});
-	 
-	});
+      $('#code pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
   }
 };
 
