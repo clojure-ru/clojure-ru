@@ -1,3 +1,1 @@
-#!/usr/bin/env bash
-
-java -jar static-app.jar --jetty
+java -jar ./static-app.jar --watch
