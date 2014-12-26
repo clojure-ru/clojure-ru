@@ -757,7 +757,7 @@ body {
 }
 
 /* line 20, ../_sass/screen.scss */
-.button, .important-button, .hero-description .primary-button, .hero-description .secondary-button, .navbar a, .navbar a:visited {
+.button, .important-button, .hero-description .primary-button, .hero-description .secondary-button, .navbar a, .navbar a:visited, .link-list a {
   /* border-top: 1px solid #49B4E7; */
   background-color: #b3cbf2;
   color: #0b3b8e;
@@ -767,14 +767,14 @@ body {
   transition: border-top-color 90ms linear, background-color 90ms linear;
 }
 /* line 26, ../_sass/screen.scss */
-.button:hover, .important-button:hover, .hero-description .primary-button:hover, .hero-description .secondary-button:hover, .navbar a:hover {
+.button:hover, .important-button:hover, .hero-description .primary-button:hover, .hero-description .secondary-button:hover, .navbar a:hover, .link-list a:hover {
   color: #b3cbf2;
   background-color: #4C83D0;
   border-top-color: #393939;
 }
 
 /* line 32, ../_sass/screen.scss */
-.important-button, .hero-description .primary-button, .navbar a.active, .navbar a.active:visited {
+.important-button, .hero-description .primary-button, .navbar a.active, .navbar a.active:visited, .link-list a:visited {
   /* border-top: 1px solid #49B4E7; */
   background-color: #1c5ac3;
   color: #b3cbf2;
@@ -1678,17 +1678,17 @@ nav .mobile-nav-button img {
   border: 1px solid #576f8a;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
-  text-shadow: 0px 1px 0px #d4dbe4;
+  /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3); */
+  /* text-shadow: 0px 1px 0px #d4dbe4; */
 }
 /* line 566, ../_sass/screen.scss */
 .link-list a {
   display: block;
   padding: 0.6em 1em;
-  border-top: 1px solid #bec9d6;
+  /* border-top: 1px solid #bec9d6; */
   border-bottom: 1px solid #8398b1;
-  background-color: #aebccc;
-  color: #2c2c2c;
+  /* background-color: #BADFFF; */
+  /* color: #084f8a; */
   text-decoration: none;
   line-height: 1.5;
   -webkit-transition: border-color 90ms linear, background-color 90ms linear;
@@ -1696,17 +1696,20 @@ nav .mobile-nav-button img {
   -o-transition: border-color 90ms linear, background-color 90ms linear;
   transition: border-color 90ms linear, background-color 90ms linear;
 }
+.link-list li:last-child a {
+  border-bottom: none;
+}
 /* line 577, ../_sass/screen.scss */
 .link-list a:visited {
   color: #2c2c2c;
 }
 /* line 581, ../_sass/screen.scss */
 .link-list a:hover {
-  background-color: #a5b4c6;
+  /* background-color: #9EBED8; */
   border-top-color: #b5c1d0;
   border-bottom-color: #7990ab;
 }
-/* line 588, ../_sass/screen.scss */
+line 588, ../_sass/screen.scss
 .link-list span {
   display: block;
   margin-top: 0.3em;

@@ -2,11 +2,9 @@
 title: hello
 ---
 
-~~~ bash
-# Начать - просто
-$ java -jar clojure.jar
-~~~
 ~~~ clojure
+;; Начать - просто
+;; java -jar clojure.jar
 user=> (println "Hello World!")
 Hello World!
 nil
