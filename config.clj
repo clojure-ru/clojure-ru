@@ -17,7 +17,7 @@
  :create-archives true
  :archives-title "Recent News"
  :archives-title-month " - %s" ; for the individual month
- :date-format-post "E, d MMM yyyy" ; the output dateformat for posts
+ :date-format-post "dd/MM/yyyy" ; the output dateformat for posts
  :date-format-rss "E, d MMM yyyy HH:mm:ss Z" ; the date format for the rss feed
  :date-format-archive "MMMM yyyy" ; the output dateformat for archive links
  :atomic-build true
