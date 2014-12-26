@@ -801,7 +801,7 @@ body {
   border: none;
   padding: 0.8em 1.5em 0.9em 1.5em;
   border-radius: 5px;
-  box-shadow: 0 0 0 1px #181818, 0 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px #181818, 0 2px 0 rgba(0, 0, 0, 0.3);
   text-decoration: none;
   text-align: center;
 }
@@ -1574,8 +1574,8 @@ nav .mobile-nav-button img {
   background: #1a66c1;
 }
 /* line 456, ../_sass/screen.scss */
-.content h1, .content-dark h1, footer h1, .content h2, .content-dark h2, footer h2, .content h3, .content-dark h3, footer h3 {
-  color: #1c1c1c;
+.content h1, .content-dark h1, footer h1, .content h2, .content-dark h2, footer h2, .content h3, .content-dark h3, footer h3, .content h4, .content-dark h4, footer h4 {
+  color: #555B5F;
 }
 /* line 460, ../_sass/screen.scss */
 .content h2, .content-dark h2, footer h2, .content h3, .content-dark h3, footer h3, .content h4, .content-dark h4, footer h4, .content h5, .content-dark h5, footer h5, .content h6, .content-dark h6, footer h6 {
@@ -1620,7 +1620,7 @@ nav .mobile-nav-button img {
 /* line 499, ../_sass/screen.scss */
 .content .post-info, .content-dark .post-info, footer .post-info {
   margin: 0;
-  color: #6c6c6c;
+  color: #546472;
 }
 /* line 505, ../_sass/screen.scss */
 .content .post, .content-dark .post, footer .post {
