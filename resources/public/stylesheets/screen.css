@@ -1344,6 +1344,11 @@ nav .mobile-nav-button img {
   *margin-left: -1.8em;
   display: inline;
 }
+.standard-layout .sidebar .menu {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
 @media (min-width: 42em) and (max-width: 62em) {
   /* line 387, ../_sass/screen.scss */
   .standard-layout .main-area {
