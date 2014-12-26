@@ -1260,15 +1260,14 @@ nav .mobile-nav-button img {
 }
 /* line 352, ../_sass/screen.scss */
 .bg.dark-color {
-  background-color: #4383d0;
+  background-color: #3E7AC2;
 }
-/* line 355, ../_sass/screen.scss */
-/* .bg.image-bg { */
-/*   background-image: url(/images/bg.jpg); */
-/*   background-position: top center; */
-/*   background-size: cover; */
-/*   background-repeat: no-repeat; */
-/* } */
+.bg.image-bg {
+  background-image: url(/images/mask.png);
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 @media (max-width: 42em) {
   /* line 355, ../_sass/screen.scss */
   .bg.image-bg {
