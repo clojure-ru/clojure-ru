@@ -8,6 +8,6 @@ if [ ! -f static/target/static-app.jar ]; then
   (cd static; lein uberjar)
 fi
 
-java -jar static/target/static-app.jar --watch
+java -jar static/target/static-app.jar --build
 rsync -av --progress html/ clojure@razum2um.me:~/dev/
 

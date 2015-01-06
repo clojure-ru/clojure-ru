@@ -23,5 +23,6 @@ title: Что почитать
 
 ## Блоги
 
+[На alexott.net](http://alexott.net/ru/clojure/) - немного устаревшее, но добротное введение от Алекса Отта
 [Стой под стрелой](http://tonsky.livejournal.com/) - ЖЖ Никиты Прокопова
 [Планета Clojure](http://planet.clojure.in/) - аггрегатор англоязычных блогов с [RSS](http://planet.clojure.in/atom.xml)
