@@ -1261,6 +1261,13 @@ nav .mobile-nav-button img {
 .bg.dark-color {
   background-color: #3E7AC2;
 }
+.fixed .bg.dark-color {
+  max-width: 59.4em;
+  margin: auto;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  box-shadow: 0px 5px 10px #2790EA;
+}
 .bg.image-bg {
   background-image: url(/images/mask.png);
   background-clip: border-box;
@@ -1286,6 +1293,12 @@ nav .mobile-nav-button img {
   padding-top: 2em;
   padding-bottom: 2em;
 }
+
+.fixed .standard-layout {
+  box-shadow: 0px 5px 10px #2790EA;
+  background-color: #fff;
+}
+
 /* line 38, ../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .standard-layout:after {
   content: "";
