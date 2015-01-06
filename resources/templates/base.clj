@@ -50,6 +50,7 @@
   (enlive/at html
     [:#header :ul] (enlive/content (navigation-template))
     [:footer] (enlive/content (footer-template))
+    [:#footer :ul] (enlive/content (navigation-template))
     [:head :title] (enlive/content (:title metadata))))
 
 ;; NEWS BLOCK FOR HOME
