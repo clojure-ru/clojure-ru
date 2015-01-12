@@ -6,7 +6,7 @@
 
   [:#news] (enlive/do->
             (enlive/content (map static.core/template-news-block-model
-                                 (take number-of-news-on-home content)))
+                                 (reverse (take number-of-news-on-home content))))
             (enlive/append (when (> (count content) number-of-news-on-home)
                                   (static.core/template-other-news-block-model 
                                     (drop number-of-news-on-home content)))))
