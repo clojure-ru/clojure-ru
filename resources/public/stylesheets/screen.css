@@ -1627,7 +1627,7 @@ nav .mobile-nav-button img {
 /* line 487, ../_sass/screen.scss */
 .content pre, .content-dark pre, footer pre {
   padding: 1em;
-  background-color: #23354f;
+  background-color: rgba(0,0,0,0.1);
 }
 /* line 490, ../_sass/screen.scss */
 .content pre code, .content-dark pre code, footer pre code {
