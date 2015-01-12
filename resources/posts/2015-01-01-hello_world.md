@@ -1,7 +1,7 @@
 ---
 title: Привет, мир
 tags: hello-world clojure
-description: hello-world clojure
+description: Поздравляем всех с обретением дома для русскоязычных кложуристов!
 ---
 
 ## Привет, мир :)
