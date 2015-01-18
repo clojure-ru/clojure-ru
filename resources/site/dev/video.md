@@ -13,6 +13,11 @@ title: Что посмотреть
 
 - [FRP & ClojureScript](http://www.youtube.com/watch?v=R4sTvHXkToQ) - чрезвычайно живой доклад от Александра Соловьева.
 
+Запись с [Функционального Митапа](http://spb-fp-meetup.timepad.ru/event/174162/)
+ * [Первая часть](https://www.youtube.com/watch?v=KkX57Al9uzM)
+ * [Вторая часть](http://www.youtube.com/watch?v=EyNx_3KqCBY)
+ * [Третья часть](http://www.youtube.com/watch?v=nuJ4Cmg-YcI)
+
 ## Конференции
 
 Записи с конференций [clojure-conj](http://clojure-conj.org/) можно посмотреть [на канале ClojureTV](http://www.youtube.com/user/ClojureTV) и [на infoq](http://www.infoq.com/clojure/).
