@@ -1781,6 +1781,7 @@ footer:after {
   }
 }
 /* line 602, ../_sass/screen.scss */
-footer ul.first-child {
+footer ul {
   margin-top: 0;
+  margin-bottom: 0;
 }
