@@ -6,6 +6,7 @@ description: Статистика для библиотек языка Clojure
 
 <style type="text/css">
 	#libraries-stat { padding: 10px 18px 10px 6px; background: #FFF; }
+	#best-stat { padding: 10px 18px 10px 6px; background: #FFF; }
 	.line-legend { border-collapse: collapse; padding: 0; border-top: 1px solid #767676; width: 100%; }
 	.line-legend tr { border-bottom: 1px solid #767676; border-spacing: 5px 0; color:#000;}
 	.line-legend td { padding: 4px 8px 8px; }
@@ -17,6 +18,11 @@ description: Статистика для библиотек языка Clojure
 </style>
 
 <img src="/images/spinner.gif" style="margin:0 auto; display:block;">
-<canvas id="libraries-stat"  width="600px" height="400px" hidden></canvas>
+<div>
+	<canvas id="libraries-stat"  width="600px" height="400px" hidden></canvas>
+</div>
+<div>
+	<canvas id="best-stat"  width="600px" height="400px" hidden></canvas>
+</div>
 <script type="text/javascript" src="/javascripts/chart/Chart.js"></script>
 <script type="text/javascript" src="/javascripts/chart/git-chart.js"></script>

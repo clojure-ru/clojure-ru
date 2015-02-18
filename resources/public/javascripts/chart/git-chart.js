@@ -1,9 +1,8 @@
-var canvasID = "libraries-stat",
-	gitChart = null,
+var gitChart = null,
 	lineColors = ["#C8001A", "#2F3871", "#FF5022", "#FFAF00", "#5083F1", "#002157", "#0076A3", "#BD8CBF", "#603913", "#C69C6D"],
 	columnNames = ['&nbsp;&nbsp;', 'Имя репозитория', 'Активность', 'Коммитов за неделю'];
 
-function makeChart(response){
+function makeChart(response, canvas){
 	'use strict'
 
 	var data = [],
@@ -82,12 +81,12 @@ function makeChart(response){
 		return self;
 	}
 
-	document.getElementById(canvasID).parentNode.appendChild(
+	document.getElementById(canvas).parentNode.appendChild(
 		GitLegend(columnNames,data).build()
 	);
 
 	var steps = Math.ceil(maxIncrement/20),
-		gitChart = new Chart(document.getElementById(canvasID).getContext("2d")).Line(
+		gitChart = new Chart(document.getElementById(canvas).getContext("2d")).Line(
 			// data
 			{
 				labels: response.dates,
@@ -106,18 +105,28 @@ function makeChart(response){
 
 // LOAD DATA
 
-var xmlhttp = new XMLHttpRequest();
-var url = "/api/";
+var loadChart = function(url,canvas){
+	var xmlhttp = new XMLHttpRequest();
 
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var myArr = JSON.parse(xmlhttp.responseText);
-        makeChart(myArr);
-        document.querySelector('img[src*="spinner"]').remove();
-        document.getElementById(canvasID).hidden = false;
-    }
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	        var myArr = JSON.parse(xmlhttp.responseText);
+	        makeChart(myArr, canvas);
+	        var sp =document.querySelector('img[src*="spinner"]');
+	        if (sp != null) sp.remove();
+	        document.getElementById(canvas).hidden = false;
+	    } else {
+
+	    }
+	}
+
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
 }
 
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+var canvasGeneralID = "libraries-stat",
+	canvasBestID = "best-stat";
+	
+loadChart("/api/", canvasGeneralID);
+loadChart("/api/best/", canvasBestID);
 
