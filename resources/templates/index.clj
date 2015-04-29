@@ -5,11 +5,11 @@
   [:head :title] (enlive/content (:site-title (config)))
 
   [:#news] (enlive/do->
-            (enlive/content (map static.core/template-news-block-model
+            (enlive/content (map template-news-block-model
                                  (reverse (take number-of-news-on-home content))))
             (enlive/append (when (> (count content) number-of-news-on-home)
-                                  (static.core/template-other-news-block-model 
-                                    (drop number-of-news-on-home content)))))
+                                  (template-other-news-block-model 
+                                    (drop number-of-news-on-home (reverse content))))))
 
   ;[:.hero-example :.highlight] (enlive/html-content (:content (first content)))
 
