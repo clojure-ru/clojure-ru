@@ -5,7 +5,7 @@
 ; :categories -> {:name :url} all the tags in the project
 ; :projects -> {:name :url} all the sites / projects under sites
 ; :config -> the site config dictionary
-; :type can be :post or :site or :nopost (?)
+; :type can be :post or :site or :nopost or :post-for-tag (?)
 ; :pager -> {:older "link" :newer "link"} (only on pages with pages)
 
 ; content is a vector of dictionaries:

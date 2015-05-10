@@ -1,6 +1,6 @@
 [:site-title "clojure.ru" ; The default title of the pages
  :site-title-page " - Page %s" ; The extension for older pages
- :site-title-tag " - Tag %s" ; The extension for tags
+ :site-title-tag " - Тег %s" ; The extension for tags
  :site-description "Русскоязычное clojure сообщество"
  :site-url "http://clojure.ru"
  :site-default-keywords "clojure clojurescript"
