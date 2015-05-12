@@ -1785,3 +1785,6 @@ footer ul {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+div#news a:hover {color:#ECF5FF; background:transparent;}
+
