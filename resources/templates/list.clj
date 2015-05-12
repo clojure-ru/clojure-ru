@@ -20,6 +20,8 @@
       [:div :div] (enlive/html-content description))
 
   [:.content.standard-layout :.sidebar]
-    (when-not (#{:month-news :posts-for-tag} (:type metadata))
+    (case (:type metadata)
+      :month-news (fn [_] nil)
+      :posts-for-tag (enlive/content (template-tags-list))
       (enlive/content (template-archive-post)))
 )

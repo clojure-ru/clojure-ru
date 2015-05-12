@@ -57,10 +57,11 @@
 
 (enlive/defsnippet template-news-block-model index-template-file
  [:.post.cell]
- [{:keys [date title url description]}]
+ [{:keys [date title url description tags]}]
  [:h3 :a] (make-link title url)
  [:p.post-info] (enlive/content date)
  [:p :a] (enlive/set-attr :href url)
+ [:p.tags :a] (links-list (map (fn [t] (update-in t [:title] #(str "#" %))) tags))
  [:div :div] (enlive/html-content description))
 
 (enlive/defsnippet template-other-news index-template-file
@@ -112,3 +113,11 @@
       (links-list (map #(make-archive-links-for-year year %) 
                        (distinct (map :javadate posts)))))
     (links-list (map make-archive-links-for-archive content)))) 
+
+(enlive/defsnippet template-tags-list site-template-file
+  [:.content.standard-layout :.sidebar :.navigation]
+  []
+  [:h4 :strong] (enlive/content "Список тегов")
+  [:ul.menu :li] (links-list (map (fn [t] {:title (str (:tag t) " (" (:count t) ")") :url (:url t)}) 
+                                 (:categories metadata))))
+
