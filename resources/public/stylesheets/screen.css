@@ -1269,10 +1269,11 @@ nav .mobile-nav-button img {
   box-shadow: 0px 5px 10px #2790EA;
 }
 .bg.image-bg {
-  background-image: url(/images/mask.png);
-  background-clip: border-box;
+  background-image: url(/images/logo-bg.svg);
+  background-clip: content-box;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 59%;
 }
 @media (max-width: 42em) {
   /* line 355, ../_sass/screen.scss */
