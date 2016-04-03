@@ -23,7 +23,7 @@ Clojure, Transit, трансдьюсеров и других Clojure-техно�
  * [Вторая часть](http://www.youtube.com/watch?v=EyNx_3KqCBY)
  * [Третья часть](http://www.youtube.com/watch?v=nuJ4Cmg-YcI)
 
-[Устройство персистентных структур данных](https://www.youtube.com/watch?v=siUvJN4FoVY)
+[Устройство персистентных структур данных](https://www.youtube.com/watch?v=siUvJN4FoVY) + [слайды](http://fxposter.github.io/persistent-data-structures-presentation/assets/player/KeynoteDHTMLPlayer.html)
 
 [Пишем простую RPG на Clojure](http://www.youtube.com/watch?v=r0TWL5L7RE0).
 
