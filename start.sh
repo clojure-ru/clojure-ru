@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d static ]; then
+if [ ! -d static/target ]; then
   git submodule init
 fi
 if [ ! -f static/target/static-app.jar ]; then
