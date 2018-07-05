@@ -2,7 +2,7 @@
 
 ```
 |--- config.clj ; общие настройки сайта
-|--- recoureces
+|--- resources
   |--- posts ; новости
   |--- public ; статика и html-шаблоны
   |--- site ; различные посты
