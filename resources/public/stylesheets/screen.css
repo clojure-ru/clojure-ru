@@ -209,6 +209,7 @@ sub {
 /* line 212, ../_sass/normalize.scss */
 img {
   border: 0;
+  max-width: 100%;
 }
 
 /*
