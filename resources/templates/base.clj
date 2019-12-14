@@ -83,6 +83,12 @@
 
 ;; RECENT POSTS block
 
+(enlive/defsnippet same-sidebar base-template-file
+  [:.content.standard-layout :.sidebar :.navigation]
+  [links]
+  [:h4 :strong] (enlive/content "Последние новости")
+  [:ul.menu :li] (links-list links))
+
 (enlive/defsnippet template-recent-post base-template-file
   [:.content.standard-layout :.sidebar :.navigation]
   []
